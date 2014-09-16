@@ -1,0 +1,18 @@
+= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => {:method => :post, :class => 'forgot-password row-fluid'}) do |f|
+  
+  legend Forgot your password?
+  
+  - unless resource.errors.empty?
+    .alert.alert-error
+      = devise_error_messages!
+  
+  .control-group
+    = f.label :email
+    = f.email_field :email, :class => 'span12'
+    p.help-block Send me reset password instructions
+
+  .form-actions
+    = f.submit "Reset Password", :class => 'btn btn-large btn-blueer'
+
+- content_for :modal_footer do
+  = link_to "&laquo; Back".html_safe, root_path

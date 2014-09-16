@@ -1,0 +1,237 @@
+
+@import "bootstrap";
+@import "bootstrap-responsive";
+
+html, body {height: 100%}
+img   {display: inline-block; max-width: 100%; font-size: 0; line-height: 0; border: 0; outline: none;}
+a   {outline: none !important}
+.none {display: none !important}
+.centered {text-align: center}
+
+body {
+
+  .navbar .navbar-inner {
+    filter: none;
+
+    #menu, #nav-profile {
+      & > li {
+        & > a {
+          background-color: transparent;
+          text-shadow: 0 -1px 1px rgba(0,0,0,0.1);
+        }
+
+        .active > a, & > a:hover {
+          background-color: transparent;
+        }
+      }
+    }
+
+    ul#nav-profile {
+      display: block;
+      list-style-type: none;
+      margin: 0;
+      min-width: 150px;
+
+      & > li {
+        margin-left: 10px;
+        display: block;
+        float: left;
+
+        & > .btn, & > .btn-group {margin-top: 5px}
+
+        .btn-group.open .btn.dropdown-toggle {
+          background-color: #377b9e;
+        }
+
+        ul.dropdown-menu li {width: 100%}
+      }
+    }
+  }
+
+  .main-container {
+    min-height: 100%;
+    margin: 0 auto -60px;
+
+    & > .row-fluid {padding-top: 70px}
+    .footer-push {height: 60px;}
+
+    .main-content {
+      h1 {
+        border-bottom: 1px solid #eee;
+        color: #444b4e;
+        margin-bottom: 30px;
+        padding-bottom: 10px;
+
+        span {
+          color: #999;
+        }
+      }
+
+      .weller {
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        margin-bottom: 20px;
+
+        .head {
+          background-color: #f5f5f5;
+          border-bottom: 1px solid #ddd;
+          padding: 0 15px;
+          margin: 0;
+        }
+
+        .body {padding: 15px}
+      }
+
+      .table-widgets {
+        float: right;
+        margin-bottom: 15px;
+      }
+
+      .pagination {margin: 0 0 50px;}
+      .well {
+        &.info-er {
+          border: 0;
+          background-color: #eee;
+
+          dt {
+            margin-bottom: 15px;
+          }
+          dd {
+            margin: 0 0 25px 20px;
+
+            small {
+              color: #999;
+              display: block;
+            }
+
+            ul {
+              margin: 10px 0 0 30px;
+
+              li {margin-bottom: 10px}
+            }
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    border-top: 1px solid #eee;
+    height: 19px;
+    padding: 20px 0;
+  }
+
+  &#registration-forms {
+        margin-left: -220px !important;
+        width: 440px;
+
+        .modal-header {
+          padding: 4px 0;
+        }
+
+        .modal-body {
+          padding: 15px 30px;
+
+          form {
+
+            $placeholderColor: '#999';
+            input::-webkit-input-placeholder {color: $placeholderColor}
+            input:-moz-placeholder {color: $placeholderColor}
+            input:-o-placeholder {color: $placeholderColor}
+            input:-ms-input-placeholder {color: $placeholderColor}
+            input.placeholder {color: $placeholderColor}
+
+            label, [type="submit"] {cursor: pointer}
+
+            p.help-block {
+              color: #999;
+            }
+
+            .form-actions {
+              background-color: transparent;
+              border-top: 0;
+              padding: 0;
+
+              input[type=submit] {
+                color: rgba(255,255,255,1);
+                display: block;
+                float: right;
+                padding: 4px 15px;
+                text-shadow: 0 -1px 3px rgba(0,0,0,0.4);
+              }
+            }
+
+            &.sign-in {
+              padding: 0 70px;
+
+              .form-actions {
+                label {
+                  display: inline-block;
+                  padding-top: 8px;
+                  vertical-align: bottom;
+
+                  input {
+                    margin-right: 5px;
+                  }
+                }
+              }
+            }
+            &.forgot-password, &.resend-confirmation, &.confirmation {
+              .control-group, .form-actions {
+                padding: 0 35px;
+              }
+            }
+            &.sign-up {
+              legend {margin-bottom: 0px}
+              .help-block {margin-bottom: 5px}
+              .form-actions {
+                margin-bottom: 0;
+
+                input[type="submit"] {
+                  float: left;
+                  margin-left: 205px;
+                }
+              }
+
+              .row-fluid {
+                margin-left: 45px;
+                width: 440px;
+
+                .field_with_errors label {color: #b94a48}
+                .field_with_errors input {border-color: #b94a48}
+
+                .control-group {
+                  .controls {
+                    & > span {
+                      color: #b94a48;
+                      display: block;
+                      margin-top: 5px;
+                    }
+                  }
+
+                }
+              }
+            }
+          }
+        }
+
+        &.wide {
+          margin-left: -303px !important;
+          width: 606px;
+        }
+
+        &.static {
+          margin: 20px auto !important;
+          position: static;
+          top: auto;
+          left: auto;
+
+          .modal-body {
+            overflow-y: none;
+            max-height: none;
+          }
+        }
+      }
+
+}

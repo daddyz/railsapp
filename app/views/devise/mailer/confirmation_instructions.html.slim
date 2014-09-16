@@ -1,0 +1,14 @@
+p Hi #{@resource.to_s},
+
+p Thank you for signing up! We appreciate that you're taking time to try us out.
+
+
+p Let's get you started! To confirm your e-mail address and activate your account, click on the link below:
+
+p= link_to 'Activate my account', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token)
+p
+  Or you can go to
+  = link_to users_confirm_path(only_path: false), users_confirm_path(only_path: false)
+  and enter this code:
+  i= @resource.confirmation_token
+

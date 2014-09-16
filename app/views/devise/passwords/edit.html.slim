@@ -1,0 +1,22 @@
+= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put, :class => 'row-fluid form-horizontal' }) do |f|
+  fieldset style="padding-bottom: 0px; margin-bottom: 0px;"
+    legend Change your password
+
+    - unless resource.errors.empty?
+      .alert.alert-error
+        = devise_error_messages!
+
+    = f.hidden_field :reset_password_token
+
+    .control-group
+      = f.label :password, :class => 'control-label'
+      .controls
+        = f.password_field :password
+
+    .control-group
+      = f.label :password_confirmation, :class => 'control-label'
+      .controls
+        = f.password_field :password_confirmation
+
+    .form-actions style="padding:1; margin: 0;"
+      = f.submit "Change my password", :class => 'btn btn-primary'

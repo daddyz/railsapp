@@ -1,0 +1,17 @@
+= form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => { :method => :post, :class => 'form-horizontal' }) do |f|
+  fieldset{ style: "padding-bottom: 0px; margin-bottom: 0px;" }
+    legend Resend unlock instructions
+
+    - unless resource.errors.empty?
+      .alert.alert-error
+        = devise_error_messages!
+
+    .control-group
+      = f.label :email, :class => 'control-label'
+      .controls
+        = f.email_field :email
+
+    .form-actions{ style: "padding:1; margin: 0;" }
+      = f.submit "Resend unlock instructions", :class => 'btn btn-primary'
+      br
+      = render "devise/shared/links"

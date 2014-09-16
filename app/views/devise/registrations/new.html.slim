@@ -1,0 +1,40 @@
+- content_for :additional_class do
+  wide static
+
+= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:method => :post, :class => 'form-horizontal sign-up'}) do |f|
+
+  legend Sign up
+
+  div.row-fluid
+    div.control-group
+      = f.label :first_name, "First name*", :class => "control-label"
+      div.controls
+        = f.text_field :first_name, required: true, :placeholder => 'John', class: 'input-xlarge'
+        span= resource.errors.full_messages_for(:first_name).join(', ')
+
+    .control-group
+      = f.label :last_name, "Last name*", :class => "control-label"
+      .controls
+        = f.text_field :last_name, required: true, :placeholder => 'Smith', class: 'input-xlarge'
+        span= resource.errors.full_messages_for(:last_name).join(', ')
+
+    .control-group
+      = f.label :password, "Choose a password*", :class => "control-label"
+      .controls
+        = f.password_field :password, required: true, :placeholder => '1a@2b!3c (at least 8 characters long)', class: 'input-xlarge'
+        span= resource.errors.full_messages_for(:password).join(', ')
+
+    .control-group
+      = f.label :password_confirmation, 'Re-enter password*', :class => "control-label"
+      .controls
+        = f.password_field :password_confirmation, required: true, class: 'input-xlarge'
+        span= resource.errors.full_messages_for(:password_confirmation).join(', ')
+    .control-group
+      = f.label :email, "Email address*", :class => "control-label"
+      .controls
+        = f.email_field :email, required: true, :placeholder => 'example@company.com', class: 'input-xlarge'
+        span= resource.errors.full_messages_for(:email).join(', ')
+
+  .form-actions
+    = f.submit "Sign Up", :class => 'btn btn-large btn-blueer'
+

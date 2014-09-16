@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    title App
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = favicon_link_tag
+    = yield(:header)
+
+    = csrf_meta_tags
+  body
+
+    = render 'shared/menu'
+    .main-container.container-fluid
+      .row-fluid
+        .main-content
+          header
+            h1= yield(:page_header)
+
+            .system-notifications
+              - if notice
+                p.alert.alert-success= notice
+              - if alert
+                p.alert.alert-error= alert
+              - if flash[:success]
+                p.alert.alert-info= flash[:success]
+          = yield
+      .footer-push
+
+        footer.container-fluid
+          'App

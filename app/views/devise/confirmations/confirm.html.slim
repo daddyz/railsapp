@@ -1,0 +1,13 @@
+= form_tag('/users/confirmation', method: :get, class: 'confirmation') do
+
+  legend Enter account confirmation code
+
+  .control-group
+    = label_tag :confirmation_token, 'Confirmation Token'
+    = text_field_tag :confirmation_token, nil, :class => 'span12'
+
+  .form-actions
+    = submit_tag "Confirm", :class => 'btn btn-large btn-blueer'
+    
+- content_for :modal_footer do
+  = link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name)
